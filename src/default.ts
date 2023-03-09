@@ -3,7 +3,7 @@ export const defaultSetting = {
   archiveSession: false,
   openaiAPIKey: "",
   openaiAPITemperature: 60,
-  systemRule: ""
+  systemRule: "[我是可爱的小团子]"
 }
 
 export const defaultMessage = `
