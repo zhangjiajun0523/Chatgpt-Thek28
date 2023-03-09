@@ -26,7 +26,6 @@ import Logo from "./icons/logo2.gif";
         background-size: 200% auto;
         transition: all 0.3s ease-in-out;
     }
-    
     p:hover {
         background-position: right center;
     }
@@ -50,28 +49,35 @@ import Logo from "./icons/logo2.gif";
     s.parentNode.insertBefore(hm, s);
   })();
 </script>
- 
-<head>
-  <meta charset="UTF-8">
-  <title>啦啦啦</title>
-</head>
+
 <style>
  
+
+  #myDiv {
+    width: 640px;
+    height: 200px;
+
+  }
+
+ 
   canvas {
+    margin: 0;
     position: absolute;
+    width: 640px;
+    height: 200px;
   }
 </style>
- 
-<div>
+ <body>
+<div id="myDiv">
  
   <canvas></canvas>
   <canvas></canvas>
   <canvas></canvas>
- 
+
   <script>
  
-    function GetRequest() {
-      var url = decodeURI(location.search); //获取url中"?"符后的字串
+    function GetRequest() { 
+      var url = decodeURI(location.search); //获 取  u rl中"   ?"符后 的字串
       var theRequest = new Object();
       if (url.indexOf("?") != -1) {
         var str = url.substr(1);
@@ -186,16 +192,16 @@ import Logo from "./icons/logo2.gif";
     // INITIALIZATION
     const [c1, c2, c3] = document.querySelectorAll('canvas');
     const [ctx1, ctx2, ctx3] = [c1, c2, c3].map(c => c.getContext('2d'));
-    let fontSize = 200;
+    let fontSize = 250;
     const rockets = [];
-    const shards = [];
+    const shards = []; 
     const targets = [];
     const fidelity = 3;
     let counter = 0;
     c2.width = c3.width = window.innerWidth;
     c2.height = c3.height = window.innerHeight;
-    ctx1.fillStyle = '#000';
-    const text = '2023新年快乐！'
+    ctx1.fillStyle = '#db47a8';
+    const text = ' [因为风吹过，爱肆起]'
     let textWidth = 99999999;
  
     while (textWidth > window.innerWidth) {
@@ -218,9 +224,9 @@ import Logo from "./icons/logo2.gif";
       }
     }
  
-    ctx3.fillStyle = '#FFF';
-    ctx3.shadowColor = '#FFF';
-    ctx3.shadowBlur = 25;
+    ctx3.fillStyle = '#db47a8';
+    ctx3.shadowColor = '#127ea8';
+    ctx3.shadowBlur = 250;
  
     // ANIMATION LOOP
     (function loop() {
@@ -271,6 +277,7 @@ import Logo from "./icons/logo2.gif";
     }
   </script>
  
-</div>
 
+ </div>
+</body>
   
