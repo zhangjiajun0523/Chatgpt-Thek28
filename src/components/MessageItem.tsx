@@ -8,6 +8,8 @@ import Clipboard from "./Clipboard"
 import { preWrapperPlugin } from "../markdown"
 import "../styles/message.css"
 import { useCopyCode } from "../hooks"
+import UserAvatar from '../images/user-avatar.gif'
+import AssistantAvatar from '../images/assistant-avatar.gif'
 
 interface Props {
   role: ChatMessage["role"]
@@ -21,7 +23,9 @@ export default ({ role, message }: Props) => {
     user: "bg-gradient-to-r from-sky-400 to-emerald-500",
     assistant: "bg-gradient-to-r from-yellow-300 to-red-700 "
   }
-
+  
+  const avatar = role === 'user' ? UserAvatar : AssistantAvatar
+  
   const htmlString = () => {
     const md = MarkdownIt({
       html: true,
@@ -52,7 +56,9 @@ export default ({ role, message }: Props) => {
     >
       <div
         class={`shrink-0 w-7 h-7 mt-4 rounded-full op-80 ${roleClass[role]}`}
-      ></div>
+      >
+      <img src={avatar} alt={role} class="w-full h-full object-cover rounded-full" />
+      </div>
       <div
         class="message prose prose-slate dark:prose-invert dark:text-slate break-words overflow-hidden"
         innerHTML={htmlString()}
