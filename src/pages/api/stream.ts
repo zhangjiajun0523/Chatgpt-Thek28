@@ -24,10 +24,10 @@ export const post: APIRoute = async context => {
 
   if (!key.startsWith("sk-")) key = apiKey
   if (!key) {
-    return new Response("没有填写 OpenAI API key")
+    return new Response("没有填写 OpenAI API key喔~")
   }
   if (!messages) {
-    return new Response("没有输入任何文字")
+    return new Response("没有输入任何文字喔~")
   }
 
   const completion = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -60,7 +60,7 @@ export const post: APIRoute = async context => {
             //   created: 1677729391,
             //   model: 'gpt-3.5-turbo-0301',
             //   choices: [
-            //     { delta: { content: '你' }, index: 0, finish_reason: null }
+            //     { delta: { content: '小哥哥/小姐姐,你' }, index: 0, finish_reason: null }
             //   ],
             // }
             const json = JSON.parse(data)
