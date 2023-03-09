@@ -60,18 +60,26 @@ import Logo from "./icons/logo2.gif";
   }
 
  
-  canvas {
+  canvas{
     margin: 0;
     position: absolute;
-    width: 85%;
+    width: 37%;
     height: 200px;
   }
+/* 手机端样式 */
+@media only screen and (max-width: 600px) {
+  canvas{
+    margin: 0;
+    position: absolute;
+    width: 92%;
+    height: 200px;
+  }}
 </style>
  <body>
 <div id="myDiv">
  
   <canvas></canvas>
-  <canvas></canvas>
+  <canvas ></canvas>
   <canvas></canvas>
 
   <script>
@@ -192,7 +200,7 @@ import Logo from "./icons/logo2.gif";
     // INITIALIZATION
     const [c1, c2, c3] = document.querySelectorAll('canvas');
     const [ctx1, ctx2, ctx3] = [c1, c2, c3].map(c => c.getContext('2d'));
-    let fontSize = 250;
+    let fontSize = 400;
     const rockets = [];
     const shards = []; 
     const targets = [];
@@ -202,17 +210,17 @@ import Logo from "./icons/logo2.gif";
     c2.width = c3.width = 1000;
     c2.height = c3.height = window.innerHeight;
     ctx1.fillStyle = '#db47a8';
-    const text = ' [因为风吹过，爱肆起]'
-    let textWidth = 99999999;
+    const text = 'Therk28'
+    let textWidth = 9999999999;
  
     while (textWidth > window.innerWidth) {
-      ctx1.font = `90 ${fontSize--}px Arial`;
+      ctx1.font = `900 ${fontSize--}px Arial`;
       textWidth = ctx1.measureText(text).width;
     }
  
     c1.width = textWidth;
-    c1.height = fontSize * 1.7;
-    ctx1.font = `90 ${fontSize}px Arial`;
+    c1.height = fontSize * 1.5;
+    ctx1.font = `900 ${fontSize}px Arial`;
     ctx1.fillText(text, 0, fontSize);
     const imgData = ctx1.getImageData(0, 0, c1.width, c1.height);
     for (let i = 0, max = imgData.data.length; i < max; i += 4) {
