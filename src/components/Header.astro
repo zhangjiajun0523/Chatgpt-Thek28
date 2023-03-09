@@ -198,20 +198,21 @@ import Logo from "./icons/logo2.gif";
     const targets = [];
     const fidelity = 3;
     let counter = 0;
-    c2.width = c3.width = window.innerWidth;
+    //c2.width = c3.width = window.innerWidth;
+    c2.width = c3.width = 1000;
     c2.height = c3.height = window.innerHeight;
     ctx1.fillStyle = '#db47a8';
     const text = ' [因为风吹过，爱肆起]'
     let textWidth = 99999999;
  
     while (textWidth > window.innerWidth) {
-      ctx1.font = `900 ${fontSize--}px Arial`;
+      ctx1.font = `90 ${fontSize--}px Arial`;
       textWidth = ctx1.measureText(text).width;
     }
  
     c1.width = textWidth;
-    c1.height = fontSize * 1.5;
-    ctx1.font = `900 ${fontSize}px Arial`;
+    c1.height = fontSize * 1.7;
+    ctx1.font = `90 ${fontSize}px Arial`;
     ctx1.fillText(text, 0, fontSize);
     const imgData = ctx1.getImageData(0, 0, c1.width, c1.height);
     for (let i = 0, max = imgData.data.length; i < max; i += 4) {
@@ -225,8 +226,8 @@ import Logo from "./icons/logo2.gif";
     }
  
     ctx3.fillStyle = '#db47a8';
-    ctx3.shadowColor = '#127ea8';
-    ctx3.shadowBlur = 250;
+    ctx3.shadowColor = '#db47a8';
+    ctx3.shadowBlur = 25;
  
     // ANIMATION LOOP
     (function loop() {
